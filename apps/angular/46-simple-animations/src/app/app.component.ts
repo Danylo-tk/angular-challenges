@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { faidInFromLeftAnimation, listAnimation } from './app.animations';
 
 @Component({
   standalone: true,
   imports: [],
+  animations: [faidInFromLeftAnimation, listAnimation],
   selector: 'app-root',
   styles: `
     section {
@@ -19,7 +21,7 @@ import { Component } from '@angular/core';
   `,
   template: `
     <div class="mx-20 my-40 flex gap-5">
-      <section>
+      <section [@faidInFromLeftAnimation]>
         <div>
           <h3>2008</h3>
           <p>
@@ -51,7 +53,7 @@ import { Component } from '@angular/core';
         </div>
       </section>
 
-      <section>
+      <section [@listAnimation]>
         <div class="list-item">
           <span>Name:</span>
           <span>Samuel</span>
